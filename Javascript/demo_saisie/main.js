@@ -3,7 +3,7 @@ const readline = require('readline');
 
 params = {
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
 };
 
 const rl = readline.createInterface(params);
