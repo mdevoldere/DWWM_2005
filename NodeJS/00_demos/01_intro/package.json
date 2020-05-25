@@ -1,0 +1,15 @@
+{
+  "name": "node_intro",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mdevoldere",
+  "license": "MIT",
+  "dependencies": {
+    "semver": "^7.3.2"
+  }
+}

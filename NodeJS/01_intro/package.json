@@ -1,0 +1,14 @@
+{
+  "name": "nodejs_intro",
+  "version": "0.0.1",
+  "description": "my first node app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mdevoldere",
+  "license": "MIT",
+  "dependencies": {
+    "semver": "^7.3.2"
+  }
+}
