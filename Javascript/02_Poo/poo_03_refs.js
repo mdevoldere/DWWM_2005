@@ -14,7 +14,7 @@ console.log(message);
 
 testValeur(message);
 
-console.log(message);
+console.log(message); // non modifié
 
 
 
@@ -29,7 +29,7 @@ console.log(tableau);
 
 testRef(tableau);
 
-console.log(tableau);
+console.log(tableau); // non modifié
 
 
 
@@ -46,6 +46,6 @@ console.log(tableau);
 
 testRef_item(tableau);
 
-console.log(tableau);
+console.log(tableau); // modifié !!!
 
  
