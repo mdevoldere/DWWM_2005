@@ -11,8 +11,8 @@
  *      a) Créer 2 "Area"
  *          a.1) Area 1 : 4 lignes x 4 colonnes
  *          a.2) Area 2 : 8 lignes x 6 colonnes
- *      b) Dans la 1ère "Area", ajouter 8 "Point"" (coordonnées au choix, 5 dans les limites de la zone et 3 hors limites)
- *      c) Dans la 2nde "Area", ajouter 6 "Point"" (coordonnées au choix, tous en dehors des limites)
+ *      b) Dans la 1ère "Area", ajouter 8 "Point" (coordonnées au choix, 5 dans les limites de la zone et 3 hors limites)
+ *      c) Dans la 2nde "Area", ajouter 6 "Point" (coordonnées au choix, tous en dehors des limites)
  *      d) Créer ensuite 2 "Point" distincts ayant les mêmes coordonnées
  *      e) Les ajouter dans chacune des zones (1 "Point" par zone)
  *      f) Pour chaque zone : 
