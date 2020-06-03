@@ -2,9 +2,10 @@
 
 Un "Point" est un objet représentant des coordonnées (x,y) dans un espace à 2 dimensions
 Une "Area" est un objet représentant une zone à 2 dimensions (coïncidence?)
-Une "Area" est obligatoirement définie par une largeur et une hauteur (width, height)
-On peut ajouter, déplacer et supprimer des "Point" à l'intérieur de la zone
-
+Une "Area" est obligatoirement définie par une largeur (nombre de colonnes) et une hauteur (nombre de lignes) pour former une grille.
+On peut ajouter, déplacer et supprimer des "Point" à l'intérieur d'une Area (1 seul "Point" par coordonnée).
+Une "Area" ne peut contenir plus de "Point" que de coordonnées disponibles dans la zone.
+Les "Point" ajoutés peuvent se situer en dehors des limites de la zone.
 
 Le "Point" d'origine (0,0) d'une "Area" est situé au coin supérieur gauche
 Le "Point" d'origine existe toujours (créé dans le constructeur) et ne peut être supprimé
@@ -17,12 +18,9 @@ ALGORITHME AJOUTER UN POINT DANS UNE AREA:
     1.1) Ajout impossible, renvoyer false
 
 2) Si un "Point" existe déjà aux mêmes coordonnées:
-    2.1) Rechercher la position libre la plus proche du "Point" d'origine
-        2.1.1) Incrémenter "x"
-        2.1.2) Si nouvelle position occupée
-            a) Incrémenter y
-            b) Si nouvelle position occupée
-                b.1) Conserver les coordonnées
-                b.2) Recommencer à l'étape 2.1.1
-3) Enregistrer le "Point" 
+    2.1) Rechercher la position libre la plus proche du "Point" d'origine (0,0)
+    2.2) Si 2 positions son éligibles (distance égale), celle la plus proche du bord supérieur de la zone est privilégiée
+       
+3) Enregistrer le "Point" dans la zone
+
 4) Renvoyer true
