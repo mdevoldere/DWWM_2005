@@ -5,6 +5,7 @@
 
 
 node_modules
+*.vpp.*
 
 # User-specific files
 *.rsuser

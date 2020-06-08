@@ -34,9 +34,9 @@
  * (une zone 4x4 est limitée à 16 points)
  * Les "Point" ajoutés peuvent se situer en dehors des limites de la zone (la limite du nombre de point par zone ne peut pas être dépassée !).
  * 
- * Le "Point" d'origine (0,0) d'une "Area" est situé au coin supérieur gauche
- * Le "Point" d'origine existe toujours (créé dans le constructeur) et ne peut être supprimé
- * A partir du "Point" d'origine, la zone s'étend vers la droite pour les abscisses et vers le bas pour les ordonnées
+ * Le "Point" d'origine (0,0) d'une "Area" est situé au coin supérieur gauche 
+ * Le "Point" d'origine existe toujours (créé dans le constructeur) et ne peut être supprimé 
+ * A partir du "Point" d'origine, la zone s'étend vers la droite pour les abscisses et vers le bas pour les ordonnées 
  *
  *
  * ALGORITHME AJOUTER/DEPLACER UN POINT DANS UNE AREA: 

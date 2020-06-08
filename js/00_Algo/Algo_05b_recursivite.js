@@ -14,6 +14,13 @@ function produit_recursif(a, b) {
     return (produit_recursif(a-1, b) + b); 
 }
 
+function produit_recursif_alt(a, b) {
+    if (b == 0) {
+        return 0;
+    }
+    return a + produit_recursif(a, b - 1);
+}
+
 console.log(produit_recursif(0,30));
 console.log(produit_recursif(30,0));
 console.log(produit_recursif(2,3));

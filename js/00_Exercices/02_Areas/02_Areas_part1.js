@@ -54,13 +54,6 @@ class Point
 
 /**
  * Programme "Point"
- * Décrivez ci-dessous en quelques lignes le programme suivant
- * (utilité, finalité)
- * 
- * 
- * 
- * 
- * 
  */
 
 let p1 = new Point(0, 1);

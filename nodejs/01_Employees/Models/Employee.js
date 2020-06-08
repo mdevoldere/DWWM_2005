@@ -6,32 +6,102 @@ class Employee
 {
 
     /**
-     * Constructeur
+     * Initialize un employé
+     * @param Object _employee Un objet quelconque.
      */
-    constructor(_id, _lastname, _firstname, _role, _salary, _hiredate) {
+    constructor(_employee) {
 
-        this.id = parseInt(_id); // NaN
-        this.lastname = _lastname || "Ano";
-        this.firstname = _firstname || "Nymous";
-        this.role = _role || "Boulanger";
-        this.salary = parseInt(_salary);
-        this.hiredate = _hiredate;
+        this.id = 0;
+        this.lastname = "Doe";
+        this.firstname = "John";
+        this.role = "Unknown";
+        this.salary = 0;
+        this.hiredate = new Date();
+        this.email = null;
 
-        this.email = (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
+        if(_employee !== undefined) { // si un objet est fourni en argument
+            this.copy(_employee);
+        }
     }
 
     /**
-     * Récupère le salaire mensuel de l'employé
+     * Analyse et copie les informations de l'objet fourni en argument
+     * Seuls les valeurs des attributs nécessaires à l'objet actuel sont copiés.
+     * @param Object _employee un objet quelconque à analyser et à copier
+     */
+    copy(_employee) {
+
+        // si l'argument _employee n'est pas fourni, _employee = un objet litéral vide
+        _employee = _employee || {};
+
+        this.id         = parseInt(_employee.id || 0); 
+        this.lastname   = _employee.lastname || "Doe";
+        this.firstname  = _employee.firstname || "John";
+        this.role       = _employee.role || "Unknown";
+        this.salary     = parseInt(_employee.salary || 0);
+
+        // Calcul de l'email
+        this.email      = (this.firstname[0] + this.lastname).toLowerCase() + "@email.fr";
+
+        // Recréation de l'objet Date à partir de la date fournie
+        if(_employee.hiredate !== undefined) {
+            this.hiredate = new Date(_employee.hiredate);
+        }
+    }
+
+    /**
+     * Retourne le salaire mensuel de l'employé
+     * @returns int Le salaire mensuel de l'employé
      */
     getMonthlySalary() {
         //(salaire_mensuel = salaire_annuel / 12*0.75)
-        return Math.round(this.salary/12*0.75);
+        return Math.round(this.salary / 12 * 0.75);
     }
-
+   
     /**
-     * 
+     * Retourne l'ancienneté de l'employé (Différence entre la date actuelle et la date d'embauche)
+     * @returns string L'ancienneté de l'employé au format : "Y années M mois J jours"
      */
-    getSeniority_Masoud() {
+    getSeniority() {
+
+        let now = new Date(); 
+        let y = now.getFullYear() - this.hiredate.getFullYear(); // années
+        let m = now.getMonth() - this.hiredate.getMonth(); // mois
+        let d = now.getDate() - this.hiredate.getDate(); // jours
+        let result = "";
+
+        if(m < 0) { // si le mois n'est pas encore passé
+            y--; // soustraction d'une année
+            m += 12; // répercussion sur les mois
+        }
+
+        if(d < 0) { // idem pour le jour
+            m--;
+            d = Math.floor(d + (365.25/12)); 
+        }
+
+        if(y > 0) {
+            result += y + " année(s) ";
+        }
+
+        if(m > 0) {
+            result += m + " mois ";
+        }
+
+        if(d > 0) {
+            result += d + " jour(s) ";
+        }
+
+        return result;
+    }
+}
+
+
+module.exports = Employee;
+
+
+/*
+getSeniority_Masoud() {
 
         let now = new Date();
         //let embaucheDate = this.hiredate;
@@ -83,101 +153,4 @@ class Employee
 
     }
 
-    getSeniority() {
-        let now = new Date(); 
-        let y = now.getFullYear() - this.hiredate.getFullYear(); // années
-        let m = now.getMonth() - this.hiredate.getMonth(); // mois
-        let d = now.getDate() - this.hiredate.getDate(); // jours
-        let result = "";
-
-        if(m < 0) {
-            y--;
-            m += 12;
-        }
-
-        if(d < 0) {
-            m--;
-            d = Math.floor(d + (365.25/12));
-        }
-
-        if(y > 0) {
-            result += y + " année(s) ";
-        }
-
-        if(m > 0) {
-            result += m + " mois ";
-        }
-
-        if(d > 0) {
-            result += d + " jour(s) ";
-        }
-
-        return result;
-
-    }
-}
-
-
-
-module.exports = Employee;
-
-
-
-
-/** DÉBUT ZONE NON EDITABLE (Ne pas modifier les lignes suivantes) */
-
-
-/** @var Employee employee1 */
-//var employee1 = new Employee(1, 'Doe', 'John', 'manager', 82000, new Date('2020-12-28')); // création d'un nouvel employé
-
-/** @var array employees */
-//const employees = []; // tableau contenant les employés
-
-//console.log(employee1); // doit afficher l'objet "employee1"
-//console.log("Il y a " + employees.length + " employé(e)s."); // doit afficher "Il y a 5 employé(e)s."
-//console.log(employees); // export des employés dans la console
-
-
-/** FIN ZONE NON EDITABLE (Ne pas modifier les lignes précédentes) */
-
-
-
-// Écrivez votre code à partir de la ligne suivante...
-
-/*
-employees.push(
-    new Employee(3, 'B', 'Tim', 'Pâtissier', 50000, new Date('2019-03-18')),
-    new Employee(4, 'C', 'Réda', 'Prof', 30000, new Date('2019-11-26')),
-    new Employee(2, 'A', 'John', 'Videur', 23000, new Date('1520-05-27')),
-    new Employee(5, 'D', 'Mike', 'Garagiste', 50000, new Date('2020-05-20')),
-    new Employee(6, 'E', 'Gabi', 'Progamer', 1000000, new Date('2020-05-27')),
-);
-
-for(let i = 0; i < employees.length; i++) {
-
-    console.log(employees[i].firstname + " " + employees[i].hiredate.toString());
-    /*console.log(employees[i].getMonthlySalary());
-    console.log(employees[i].getSeniority_Masoud());
-    console.log(employees[i].getSeniority_Aurelien());
-    console.log(employees[i].getSeniority());
-
-}
-
-var sortDate = function(a, b) {
-    return a.hiredate - b.hiredate;
-}
-
-var sortSalary = function(a, b) {
-    return a.salary - b.salary;
-}
-
-employees.sort(sortDate);
-
-let oldEmp = employees[0];
-console.log(oldEmp);
-
-employees.sort(sortSalary);
-let emp1 = employees[0];
-let emp2 = employees[employees.length-1];
-console.log(emp1, emp2);
 */
