@@ -41,7 +41,7 @@
  *
  * ALGORITHME AJOUTER/DEPLACER UN POINT DANS UNE AREA: 
  *
- * 1) En cas d'ajout, si la zone (Area) est pleine (Toutes les coordonnées "dans les limites" sont occupées par un "Point")
+ * 1) En cas d'ajout, si la zone (Area) est pleine 
  *    1.1) Ajout impossible, renvoyer false
  *
  * 2) Si un "Point" existe déjà aux mêmes coordonnées:
@@ -93,7 +93,7 @@ class Area
 
     /**
      * Vérifie la position de chaque "Point" existant dans la zone
-     * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche
+     * Chaque Point hors des limites est automatiquement déplacé dans les limites vers la position libre la plus proche du Point d'origine (0,0)
      * @returns int le nombre de points déplacés
      */
     needAllInside(/* déterminer les paramètres */) {

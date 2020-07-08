@@ -52,5 +52,20 @@ let p2 = p1.duplicate();
 a1.addPoint(p1);
 a2.addPoint(p2);
 
+// let triDistance = a1.points.sort(a1.closestFromOrigin);
+
+let a = 1;
+let b = NaN;
+let c = 0;
+let d;
+let e = null;
+
+console.log(isFinite(a)); // true
+console.log(isFinite(b)); // false
+console.log(isFinite(c)); // true
+console.log(isFinite(d)); // false
+console.log(isFinite(e)); // true ??????????????????????
+
+a1.needAllInside();
 
 console.log();

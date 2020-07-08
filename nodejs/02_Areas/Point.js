@@ -45,6 +45,13 @@
         this.copy(_point);
         _point.copy(p);
     }
+
+    /**
+     * Retourne la distance par rapport au point d'origine (0,0)
+     */
+    distanceFromOrigin() {
+        return this.x + this.y;
+    }
  
  }
 
