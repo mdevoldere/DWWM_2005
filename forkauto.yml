@@ -1,18 +1,18 @@
-name: Sync Fork
+- name: Sync Fork
 
-on:
+- on:
   schedule:
     - cron: '*/30 * * * *'
 
-jobs:
-  sync:
+- jobs:
+    sync:
 
-    runs-on: ubuntu-latest
+      runs-on: ubuntu-latest
 
-    steps:
-      - uses: mdevoldere/DWWM_2005
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          owner: mdevoldere
-          base: master
-          head: master
+      steps:
+        - uses: mdevoldere/DWWM_2005
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            owner: mdevoldere
+            base: master
+            head: master
