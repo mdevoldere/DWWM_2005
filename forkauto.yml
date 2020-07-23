@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: TG908/fork-sync@v1.1
+      - uses: mdevoldere/DWWM_2005
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: mdevoldere
           base: master
           head: master
